@@ -1,9 +1,9 @@
-import {pokemon} from './pokemon.js'
+import {projects} from './projects.js'
 
-const pokeContainer = document.querySelector('#container');
+const projectsContainer = document.querySelector('#projectList');
 let count = 1;
 
-pokemon.forEach(elm => {
+projects.forEach(elm => {
 	let numPrefix = count < 10 ? '00' : '0';
 	let imgName = `${numPrefix}${count++}${elm.ename}.png`;
 	let card = document.createElement('div');
