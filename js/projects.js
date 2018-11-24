@@ -1,6 +1,6 @@
 export const projects = [
 	{
-		"id": "001"
+		"id": "001",
 		"projName": "Principles of Digital Design",
 		"link": "files/DesignPrinciples3.pdf",
 		"description":"",

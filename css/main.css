@@ -67,16 +67,16 @@ p{
 .projectList a{
   width: 20%;
 }
-.project-tile{
+.projectCard{
   width: 20%;
   margin: 0 4%;
   background: #36FFE9;
   box-shadow: 1px 1px 10px black;
 }
-.project-tile:hover{
+.projectCard:hover{
   box-shadow: 2px 2px 20px black;
 }
-.project-tile p{
+.projectCard p{
   padding-top: 20px;
   color: #666;
   font-weight: 600;

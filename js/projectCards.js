@@ -1,48 +1,39 @@
 import {projects} from './projects.js'
 
-const projectsContainer = document.querySelector('#projectList');
-let count = 1;
+const projectList = document.querySelector('#projectList');
+
+function Project(obj){
+	this.name = obj.projName;
+	this.link = obj.link;
+	this.desc = obj.description;
+	this.skills = obj.skillsUsed;
+	this.languages = obj.languagesUsed;
+	this.imgSrc = `proj${obj.id}.png`;
+
+	this.createCard = function(){
+		let card = document.createElement('div');
+		card.classList.add('projectCard');
+		projectList.appendChild(card);
+		let cardFront = document.createElement('div');
+		cardFront.classList.add('cardFace cardFront');
+		card.appendChild(cardFront);
+		let cardBack = document.createElement('div');
+		cardBack.classList.add('cardFace cardBack');
+		card.appendChild(cardBack);
+
+		let projName = document.createElement('p');
+		projName.textContent = this.name;
+		cardFront.appendChild(projName);
+
+	};
+}
+
+// function createProjCard(proj){
+
+// }
 
 projects.forEach(elm => {
-	let numPrefix = count < 10 ? '00' : '0';
-	let imgName = `${numPrefix}${count++}${elm.ename}.png`;
-	let card = document.createElement('div');
-	card.className = "card";
-	let cardFront = document.createElement('div');
-	cardFront.className = "cardFace cardFront";
-	let cardBack = document.createElement('div');
-	cardBack.className = "cardFace cardBack";
-	card.appendChild(cardFront);
-	card.appendChild(cardBack);
-	let fig = document.createElement('fig');
-	let cap = document.createElement('figcaption');
-	let img = document.createElement('img');
-	img.src = `img/${imgName}`;
-	cap.textContent = elm.ename;
-	cardFront.appendChild(fig);
-	fig.appendChild(img);
-	fig.appendChild(cap);
-
-	let statContainer = document.createElement('div');
-	statContainer.classList.add('statContainer');
-	var statsArray = elm.base;
-	for(var stat in statsArray){
-		var p = document.createElement('p');
-		p.classList.add('stat');
-		p.textContent = stat+": "+statsArray[stat];
-		console.log(p);
-		statContainer.appendChild(p);
-	}
-	cardBack.appendChild(statContainer);
-
-	pokeContainer.appendChild(card);
-
+	let newProj = new Project(elm);
+	newProj.createCard();
 });
 
-
-document.getElementById('container').addEventListener("mouseover", function(e) {
-		if(e.target && e.target.matches('.card')){
-		  console.log('flip');
-		  e.target.classList.toggle('flip');
-		}
-	});
