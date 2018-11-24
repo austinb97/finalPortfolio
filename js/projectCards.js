@@ -15,7 +15,7 @@ function Project(obj){
 		card.classList.add('projectCard');
 		projectList.appendChild(card);
 		let cardFront = document.createElement('div');
-		cardFront.classList.add('cardFace cardFront');
+		cardFront.classList.add('cardFace','cardFront');
 		card.appendChild(cardFront);
 		let cardBack = document.createElement('div');
 		cardBack.classList.add('cardFace cardBack');
