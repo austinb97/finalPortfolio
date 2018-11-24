@@ -24,7 +24,7 @@ function Project(obj){
 		let projName = document.createElement('p');
 		projName.textContent = this.name;
 		cardFront.appendChild(projName);
-
+		console.log(projName);
 	};
 }
 
@@ -35,5 +35,6 @@ function Project(obj){
 projects.forEach(elm => {
 	let newProj = new Project(elm);
 	newProj.createCard();
+
 });
 
