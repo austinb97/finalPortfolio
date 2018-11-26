@@ -66,6 +66,7 @@ p{
 }
 .projectList a{
   width: 20%;
+  color: #333;
 }
 .projectCard{
   width: 20%;
