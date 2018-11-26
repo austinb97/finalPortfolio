@@ -66,7 +66,6 @@ p{
 }
 .projectList a{
   width: 20%;
-  color: #333;
 }
 .projectCard{
   width: 20%;
@@ -79,7 +78,7 @@ p{
 }
 .projectCard p{
   padding-top: 20px;
-  color: #666;
+  color: #333;
   font-weight: 600;
   font-size: 1.3em;
 }
