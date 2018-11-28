@@ -43,6 +43,9 @@ function Project(obj){
 		imgContainer.appendChild(img);
 
 		// create Description on cardBack
+		let descHead = document.createElement('h2');
+		descHead.textContent = "Description";
+		cardBack.appendChild(descHead);
 		let description = document.createElement('p');
 		description.classList.add('description');
 		description.textContent = this.desc;
