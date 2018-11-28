@@ -63,13 +63,13 @@ function Project(obj){
 		}
 		cardBack.appendChild(skillsContain);
 
-		check for languages, if so, create
-		var languagesArray = this.languages;
-		var langArray = JSON.stringify(languagesArray);
-		console.log(langArray);
-		if(languagesArray.length > 1){
-			console.log(this.name+" has languages");
-		}
+		// check for languages, if so, create
+		// var languagesArray = this.languages;
+		// var langArray = JSON.stringify(languagesArray);
+		// console.log(langArray);
+		// if(languagesArray.length > 1){
+		// 	console.log(this.name+" has languages");
+		// }
 
 	};
 }
