@@ -42,6 +42,7 @@ function Project(obj){
 		img.src = this.imgSrc;
 		imgContainer.appendChild(img);
 
+		// CARD BACK
 		// create Description on cardBack
 		let descHead = document.createElement('h2');
 		descHead.textContent = "Description";
@@ -51,12 +52,20 @@ function Project(obj){
 		description.textContent = this.desc;
 		cardBack.appendChild(description);
 
+		// CREATE LISTS SECTION
+		let listsSection = document.createElement('div');
+		listsSection.classList.add('listsContain');
+		cardBack.appendChild(listsSection);
+
 		// create skills section on cardBack
+		let skillSection = document.createElement('div');
+		skillSection.classList.add('skillContainer');
+		listsSection.appendChild(skillSection);
 		let skillsTitle = document.createElement('h2');
 		skillsTitle.textContent = "Skills Used";
-		cardBack.appendChild(skillsTitle);
+		skillSection.appendChild(skillsTitle);
 		let skillsContain = document.createElement('ul');
-		skillsContain.classList.add('skillsContainer');
+		skillsContain.classList.add('skillsList');
 		var skillsArray = this.skills;
 		for(var skill in skillsArray){
 			var p = document.createElement('li');
@@ -64,26 +73,44 @@ function Project(obj){
 			p.textContent = skill+": "+skillsArray[skill];
 			skillsContain.appendChild(p);
 		}
-		cardBack.appendChild(skillsContain);
+		skillSection.appendChild(skillsContain);
 
 		// check for languages, if so, create
-		// var languagesArray = this.languages;
-		// var langArray = JSON.stringify(languagesArray);
-		// console.log(langArray);
-		// if(languagesArray.length > 1){
-		// 	console.log(this.name+" has languages");
-		// }
+		var languagesArray = this.languages;
+		var langArray = JSON.stringify(languagesArray);
+		// console.log(this.name + langArray);
+		if(languagesArray.length > 1){
+			console.log(this.name+" has languages");
+			// LANG DIV
+			let langDiv=document.createElement('div');
+			langDiv.classList.add('langContainer');
+			listsSection.appendChild(langDiv);
+			// LANG HEADER
+			let langHead=document.createElement('h2');
+			langHead.textContent="Languages Used";
+			langDiv.appendChild(langHead);
+			// LANG UL
+			let langList=document.createElement('ul');
+			languagesArray.forEach(elm =>{
+				let lang = document.createElement('li');
+				console.log(elm);
+				lang.textContent=elm;
+				langList.appendChild(lang);
+			});
+			langDiv.appendChild(langList);
+		}
 
 	};
 }
 
-
+// LOOPS THROUGH PROJECTS IMPORTED FROM JSON FILE AND CALLS FUNCTIONS
 projects.forEach(elm => {
 	let newProj = new Project(elm);
 	newProj.createCard();
 
 });
 
+// CARD FLIPPING FUNCTIONALITY
 document.getElementById('projectList').addEventListener("mouseover", function(e) {
 		if(e.target && e.target.matches('.projectCard')){
 		  console.log('flip');

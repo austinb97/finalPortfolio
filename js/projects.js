@@ -10,9 +10,7 @@ export const projects = [
 			3:"Information Design",
 			4:"Design Principles"
 		},
-		"languagesUsed":{
-
-		}
+		"languagesUsed":[]
 	},
 	{
 		"id": "002",
@@ -27,9 +25,7 @@ export const projects = [
 			5:"Site Structure",
 			6:"Wireframing"
 		},
-		"languagesUsed":{
-
-		}
+		"languagesUsed":[]
 	},
 	{
 		"id": "003",
@@ -43,9 +39,7 @@ export const projects = [
 			4:"Wireframing",
 			5:"Prototyping"
 		},
-		"languagesUsed":{
-
-		}
+		"languagesUsed":[]
 	},
 	{
 		"id": "004",
@@ -57,10 +51,10 @@ export const projects = [
 			2:"Web Design",
 			3:"Web Development"
 		},
-		"languagesUsed":{
-			1:"HTML",
-			2:"CSS"
-		}
+		"languagesUsed":[
+			"HTML",
+			"CSS"
+		]
 	},
 	{
 		"id": "005",
@@ -74,12 +68,12 @@ export const projects = [
 			4:"Preprocessors",
 			5:"GreenSock Animation"
 		},
-		"languagesUsed":{
-			1:"HTML",
-			2:"CSS",
-			3:"SCSS",
-			4:"JavaScript"
-		}
+		"languagesUsed":[
+			"HTML",
+			"CSS",
+			"SCSS",
+			"JavaScript"
+		]
 	},
 	{
 		"id": "006",
@@ -92,12 +86,27 @@ export const projects = [
 			3:"Logo & Branding Design",
 			4:"Working for Clients"
 		},
-		"languagesUsed":{
-			1:"HTML",
-			2:"CSS",
-			3:"JavaScript",
-			4:"JQuery"
-		}
+		"languagesUsed":[
+			"HTML",
+			"CSS",
+			"JavaScript",
+			"JQuery"
+		]
+	},
+	{
+		"id": "007",
+		"projName": "Baseball Cards",
+		"link": "https://elastic-archimedes-fa8551.netlify.com/",
+		"description":"This project shows dynamic 'cards' being loaded from a JSON file. This was done using JavaScript objects and functions. It also showcases the ability to add a new object via a button click on a website.",
+		"skillsUsed":{
+			1:"Web Development",
+			2:"Functionality",
+			3:"Dynamic loading",
+			4:"ES6",
+			5:"OOP",
+			6:"Flexbox"
+		},
+		"languagesUsed":['HTML','CSS','JavaScript','JSON']
 	},
 ]
 
@@ -115,7 +124,5 @@ export const projects = [
 	// 		3:"Information Design",
 	// 		4:"Design Principles"
 	// 	},
-	// 	"languagesUsed":{
-
-	// 	}
+	// 	"languagesUsed":[]
 	// },
