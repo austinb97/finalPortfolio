@@ -2,7 +2,9 @@ import {projects} from './projects.js'
 
 const projectList = document.querySelector('#projectList');
 
+// CREATES PROJECT OBJECT
 function Project(obj){
+	// assign variables
 	this.name = obj.projName;
 	this.link = obj.link;
 	this.desc = obj.description;
@@ -11,12 +13,7 @@ function Project(obj){
 	this.imgSrc = `img/proj${obj.id}.png`;
 
 	this.createCard = function(){
-		// create card faces - front and back
-		// let cardLink = document.createElement('a');
-		// cardLink.classList.add('cardLink');
-		// cardLink.href = this.link;
-		// cardLink.target = "_blank";
-		// projectList.appendChild(cardLink);
+		// create card faces - front and back, and link
 		let card = document.createElement('a');
 		card.classList.add('projectCard');
 		card.href = this.link;
@@ -111,9 +108,37 @@ projects.forEach(elm => {
 });
 
 // CARD FLIPPING FUNCTIONALITY
-document.getElementById('projectList').addEventListener("mouseover", function(e) {
-		if(e.target && e.target.matches('.projectCard')){
-		  console.log('flip');
-		  e.target.classList.toggle('flip');
-		}
-});
+var flipCardBack = function(){
+	this.classList.toggle('flip');
+	this.addEventListener("mouseenter", flipCard, true);
+}
+
+var flipCard = function(){
+	console.log('flip');
+	this.classList.toggle('flip');
+	setTimeout(3000);
+	// this.removeEventListener("mouseenter", flipCard, true);
+	this.addEventListener("mouseleave", flipCardBack, true);
+}
+
+var card = document.querySelectorAll('.projectCard');
+for(var i = 0; i<card.length; i++){
+card[i].addEventListener("mouseenter", flipCard, true);
+card[i].addEventListener("mouseleave", flipCardBack, true);
+}
+// document.getElementById('projectList').addEventListener("mouseover", function(e) {
+// 		if(e.target && e.target.matches('.projectCard')){
+// 		  console.log('flip');
+// 		  e.target.classList.toggle('flip');
+// 		}
+// });
+
+
+
+// var addBtn = document.querySelector('#admin');
+// addBtn.addEventListener("click", function(){
+// 	projects.push({"yes":"no"});
+// 	console.log(projects);
+// });
+
+
