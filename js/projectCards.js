@@ -108,30 +108,31 @@ projects.forEach(elm => {
 });
 
 // CARD FLIPPING FUNCTIONALITY
-var flipCardBack = function(){
-	this.classList.toggle('flip');
-	this.addEventListener("mouseenter", flipCard, true);
-}
+// var flipCardBack = function(){
+// 	this.classList.toggle('flip');
+// 	this.addEventListener("mouseenter", flipCard, true);
+// }
 
-var flipCard = function(){
-	console.log('flip');
-	this.classList.toggle('flip');
-	setTimeout(3000);
-	// this.removeEventListener("mouseenter", flipCard, true);
-	this.addEventListener("mouseleave", flipCardBack, true);
-}
+// var flipCard = function(){
+// 	console.log('flip');
+// 	this.classList.toggle('flip');
+// 	setTimeout(3000);
+// 	// this.removeEventListener("mouseenter", flipCard, true);
+// 	this.addEventListener("mouseleave", flipCardBack, true);
+// }
 
-var card = document.querySelectorAll('.projectCard');
-for(var i = 0; i<card.length; i++){
-card[i].addEventListener("mouseenter", flipCard, true);
-card[i].addEventListener("mouseleave", flipCardBack, true);
-}
-// document.getElementById('projectList').addEventListener("mouseover", function(e) {
-// 		if(e.target && e.target.matches('.projectCard')){
-// 		  console.log('flip');
-// 		  e.target.classList.toggle('flip');
-// 		}
-// });
+// var card = document.querySelectorAll('.projectCard');
+// for(var i = 0; i<card.length; i++){
+// card[i].addEventListener("mouseenter", flipCard, true);
+// card[i].addEventListener("mouseleave", flipCardBack, true);
+// }
+
+document.getElementById('projectList').addEventListener("mouseover", function(e) {
+		if(e.target && e.target.matches('.projectCard')){
+		  console.log('flip');
+		  e.target.classList.toggle('flip');
+		}
+});
 
 
 
